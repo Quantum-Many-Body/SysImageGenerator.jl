@@ -1,0 +1,3 @@
+using SysImageGenerator
+
+extract("ExactDiagonalization")

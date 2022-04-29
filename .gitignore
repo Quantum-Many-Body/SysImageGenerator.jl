@@ -2,5 +2,6 @@
 *.jl.cov
 *.jl.mem
 /docs/build/
+/sysimages/
 
 desktop.ini
