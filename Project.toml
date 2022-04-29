@@ -1,0 +1,7 @@
+name = "SysImageGenerator"
+uuid = "844c6968-a67a-489e-b639-87f48050b111"
+authors = ["waltergu <waltergu1989@gmail.com> and contributors"]
+version = "0.1.0"
+
+[compat]
+julia = "1.6"
