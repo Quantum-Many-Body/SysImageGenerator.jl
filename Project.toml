@@ -17,6 +17,7 @@ SymPy = "24249f21-da20-56a4-8eb1-6a02cf4ae2e6"
 TightBindingApproximation = "d3576f78-cb9d-4774-9dc5-b247cf392ff4"
 
 [compat]
+CompileBot = "1"
 ExactDiagonalization = "0.1"
 IJulia = "1.23"
 MagnonPhonons = "0.1"
