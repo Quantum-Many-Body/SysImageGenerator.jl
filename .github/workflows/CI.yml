@@ -50,7 +50,7 @@ jobs:
           using Pkg
           Pkg.develop(PackageSpec(path=pwd()))
           Pkg.instantiate()
-          Pkg.add("https://github.com/Quantum-Many-Body/MagnonPhonons.jl")
+          Pkg.add("https://github.com/Quantum-Many-Body/MagnonPhonons.jl")'
       - name: Build and deploy
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }} # For authentication with GitHub Actions token
