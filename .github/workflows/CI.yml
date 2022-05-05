@@ -52,6 +52,8 @@ jobs:
           DOCUMENTER_KEY: ${{ secrets.DOCUMENTER_KEY }}
       - run: |
           julia --project=docs -e '
+            using Pkg
+            Pkg.add(" https://github.com/Quantum-Many-Body/MagnonPhonons.jl")
             using Documenter: DocMeta, doctest
             using SysImageGenerator
             DocMeta.setdocmeta!(SysImageGenerator, :DocTestSetup, :(using SysImageGenerator); recursive=true)
