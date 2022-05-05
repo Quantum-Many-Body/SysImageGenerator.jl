@@ -4,10 +4,10 @@ CurrentModule = SysImageGenerator
 
 # SysImageGenerator
 
-Documentation for [SysImageGenerator](https://github.com/Quantum-Many-Body/SysImageGenerator.jl).
+*Generation of Julia sysimages of quantum-many-body packages.*
 
-```@index
-```
+
+
 
 ```@autodocs
 Modules = [SysImageGenerator]
