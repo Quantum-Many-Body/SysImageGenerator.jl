@@ -7,29 +7,65 @@ using Pkg
 import IJulia: installkernel
 
 export sysimage, extract, installkernel
+export supported_packages, default_sysimage
 
-const supported_packages = ["QuantumLattices", "ExactDiagonalization", "TightBindingApproximation", "SpinWaveTheory", "MagnonPhonons"]
+"""
+    const supported_packages = [
+        "QuantumLattices",
+        "ExactDiagonalization",
+        "TightBindingApproximation",
+        "SpinWaveTheory",
+        "MagnonPhononHybridization"
+    ]
+
+The supported quantum-many-body packages that could be specified to generate the Julia sysimages.
+"""
+const supported_packages = [
+    "QuantumLattices",
+    "ExactDiagonalization",
+    "TightBindingApproximation",
+    "SpinWaveTheory",
+    "MagnonPhononHybridization"
+]
+
+"""
+    const default_sysimage = "sys_QuantumManyBody.so"
+
+The default sysimage name of the quantum-many-body packages.
+"""
 const default_sysimage = "sys_QuantumManyBody.so"
 
 """
-    sysimage(name::String=default_sysimage, packages::Vector{String}=copy(supported_packages); plot::Bool=true, symbolic::Bool=true)
+    sysimage(
+        name::String=default_sysimage;
+        packages::Vector{String}=copy(supported_packages),
+        path::String=string(dirname(dirname(pathof_noload("SysImageGenerator"))), "/sysimages"),
+        plot::Bool=true,
+        symbolic::Bool=true
+        )
 
-Create a sysimage.
+Create a sysimage with a given name for the specified packages and store it in the specified path.
+
+When `plot` is true, [Plots](https://github.com/JuliaPlots/Plots.jl) will be included in the sysimage. So will [SymPy](https://github.com/JuliaPy/SymPy.jl) when `symbolic` is true.
 """
-function sysimage(name::String=default_sysimage, packages::Vector{String}=copy(supported_packages); plot::Bool=true, symbolic::Bool=true)
-    path = dirname(dirname(pathof_noload("SysImageGenerator")))
-    Pkg.activate(path)
+function sysimage(
+        name::String=default_sysimage;
+        packages::Vector{String}=copy(supported_packages),
+        path::String=string(dirname(dirname(pathof_noload("SysImageGenerator"))), "/sysimages"),
+        plot::Bool=true,
+        symbolic::Bool=true
+        )
+    packpath = dirname(dirname(pathof_noload("SysImageGenerator")))
+    Pkg.activate(packpath)
     files = String[]
     for package in packages
         @assert package∈supported_packages "sysimage error: not supported package ($package)."
-        push!(files, "$path/scripts/precompile_$package.jl")
+        push!(files, "$packpath/scripts/precompile_$package.jl")
     end
     plot && push!(packages, "Plots")
     symbolic && push!(packages, "SymPy")
-    create_sysimage(packages;
-        sysimage_path="$path/sysimages/$name",
-        precompile_execution_file=files
-    )
+    f() = create_sysimage(packages; sysimage_path="$path/$name", precompile_execution_file=files)
+    cd(f, mktempdir())
     Pkg.activate()
 end
 
@@ -50,13 +86,20 @@ function extract(package_name::String)
 end
 
 """
-    installkernel(sysimage::String=default_sysimage, kernel::String="Julia-QuantumManyBody")
+    installkernel(
+        kernel::String="Julia-QuantumManyBody";
+        sysimage::String=default_sysimage,
+        path::String=string(dirname(dirname(pathof_noload("SysImageGenerator"))), "/sysimages")
+        )
 
 Install a Jupyter notebook kernel with the specified sysimage.
 """
-function installkernel(sysimage::String=default_sysimage, kernel::String="Julia-QuantumManyBody")
-    path = dirname(dirname(pathof_noload("SysImageGenerator")))
-    sysimage = "$path/sysimages/$sysimage"
+function installkernel(
+        kernel::String="Julia-QuantumManyBody";
+        sysimage::String=default_sysimage,
+        path::String=string(dirname(dirname(pathof_noload("SysImageGenerator"))), "/sysimages")
+        )
+    sysimage = "$path/$sysimage"
     installkernel(kernel, "--project=@.", "--sysimage=$(sysimage)")
 end
 

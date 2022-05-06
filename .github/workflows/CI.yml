@@ -48,7 +48,7 @@ jobs:
       - name: Install dependencies
         run: julia --project=docs/ -e '
           using Pkg;
-          Pkg.add(url="https://github.com/Quantum-Many-Body/MagnonPhonons.jl");
+          Pkg.add(url="https://github.com/Quantum-Many-Body/MagnonPhononHybridization.jl");
           Pkg.develop(PackageSpec(path=pwd()));
           Pkg.instantiate()'
       - name: Build and deploy

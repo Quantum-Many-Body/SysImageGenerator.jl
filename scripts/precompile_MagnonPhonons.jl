@@ -1,3 +1,0 @@
-using SysImageGenerator
-
-extract("MagnonPhonons")

@@ -603,12 +603,12 @@ git-tree-sha1 = "3d3e902b31198a27340d0bf00d6ac452866021cf"
 uuid = "1914dd2f-81c6-5fcd-8719-6d5c9610ff09"
 version = "0.5.9"
 
-[[MagnonPhonons]]
+[[MagnonPhononHybridization]]
 deps = ["LinearAlgebra", "QuantumLattices", "SpinWaveTheory", "StaticArrays", "TightBindingApproximation"]
-git-tree-sha1 = "755c8dc0b982e190cdfbd7e4f5e837c9c44e6813"
+git-tree-sha1 = "15a624ad2f6106fe9eefdedd1dadfee568a9acb9"
 repo-rev = "main"
-repo-url = "https://github.com/Quantum-Many-Body/MagnonPhonons.jl"
-uuid = "55491171-c3b8-48b7-a79a-019b90865c9a"
+repo-url = "https://github.com/Quantum-Many-Body/MagnonPhononHybridization.jl"
+uuid = "83eb1d98-e19b-4996-92b4-3414e1382055"
 version = "0.1.0"
 
 [[Markdown]]
@@ -753,9 +753,9 @@ version = "1.2.0"
 
 [[Plots]]
 deps = ["Base64", "Contour", "Dates", "Downloads", "FFMPEG", "FixedPointNumbers", "GR", "GeometryBasics", "JSON", "Latexify", "LinearAlgebra", "Measures", "NaNMath", "Pkg", "PlotThemes", "PlotUtils", "Printf", "REPL", "Random", "RecipesBase", "RecipesPipeline", "Reexport", "Requires", "Scratch", "Showoff", "SparseArrays", "Statistics", "StatsBase", "UUIDs", "UnicodeFun", "Unzip"]
-git-tree-sha1 = "6f2dd1cf7a4bbf4f305a0d8750e351cb46dfbe80"
+git-tree-sha1 = "9101f17d98edd72a44db95afcaf3534d500da058"
 uuid = "91a5bcdd-55d7-5caf-9e0b-520d859cae80"
-version = "1.27.6"
+version = "1.28.2"
 
 [[PositiveFactorizations]]
 deps = ["LinearAlgebra"]
@@ -791,9 +791,9 @@ version = "5.15.3+1"
 
 [[QuantumLattices]]
 deps = ["DataStructures", "Formatting", "LaTeXStrings", "LinearAlgebra", "MacroTools", "NearestNeighbors", "Printf", "Random", "RecipesBase", "Reexport", "Serialization", "StaticArrays", "TimerOutputs"]
-git-tree-sha1 = "83719ba09ebf6c9a4c98f63c107a9a9205a335ce"
+git-tree-sha1 = "71d5c97865edd44c28209e309004ef74096bee0c"
 uuid = "78ae1a1f-1d5d-5174-b61c-66e31b2346dc"
-version = "0.8.13"
+version = "0.8.14"
 
 [[REPL]]
 deps = ["InteractiveUtils", "Markdown", "Sockets", "Unicode"]
@@ -904,9 +904,9 @@ version = "2.1.4"
 
 [[SpinWaveTheory]]
 deps = ["LinearAlgebra", "QuantumLattices", "StaticArrays", "TightBindingApproximation", "TimerOutputs"]
-git-tree-sha1 = "9ab6905b16a5727e4e6297c0eac3bc06c7550b85"
+git-tree-sha1 = "f934c2e76cf29e9f0782cad0849355c8721399f1"
 uuid = "0f33b1d1-764a-4710-8fd7-79355e2c9255"
-version = "0.1.4"
+version = "0.1.5"
 
 [[Static]]
 deps = ["IfElse"]
@@ -980,9 +980,9 @@ uuid = "8dfed614-e22c-5e08-85e1-65c5234f0b40"
 
 [[TightBindingApproximation]]
 deps = ["LinearAlgebra", "Optim", "Printf", "QuantumLattices", "RecipesBase", "TimerOutputs"]
-git-tree-sha1 = "52a520714885536cd323dff69c80d2818a0aee9a"
+git-tree-sha1 = "876d2da6ab8264692aafe04cd9a67343a8c9af38"
 uuid = "d3576f78-cb9d-4774-9dc5-b247cf392ff4"
-version = "0.1.9"
+version = "0.1.10"
 
 [[TimerOutputs]]
 deps = ["ExprTools", "Printf"]
