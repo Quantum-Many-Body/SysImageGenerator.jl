@@ -606,8 +606,6 @@ version = "0.5.9"
 [[MagnonPhononHybridization]]
 deps = ["LinearAlgebra", "QuantumLattices", "SpinWaveTheory", "StaticArrays", "TightBindingApproximation"]
 git-tree-sha1 = "15a624ad2f6106fe9eefdedd1dadfee568a9acb9"
-repo-rev = "main"
-repo-url = "https://github.com/Quantum-Many-Body/MagnonPhononHybridization.jl"
 uuid = "83eb1d98-e19b-4996-92b4-3414e1382055"
 version = "0.1.0"
 
