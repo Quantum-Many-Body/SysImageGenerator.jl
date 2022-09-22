@@ -25,7 +25,8 @@ sysimage()
 ```
 The general usage of [`sysimage`](@ref) is as follows:
 ```julia
-sysimage(name_of_the_generated_sysimage;
+sysimage(
+    name_of_the_generated_sysimage;
     packages=["subset of the supported quantum-many-body packages"],
     path="path to store the generated sysimage",
     plot=true, # if you want Plots to be included in your sysimage, otherwise false
@@ -45,7 +46,8 @@ Here,
 After the generation of the sysimage of quantum-many-body packages, you can install a specific Jupyter notebook kernel that uses it by the [`installkernel`](@ref) function exported by this package:
 ```julia
 using SysImageGenerator
-installkernel(name_of_the_installed_kernel; # default value is "Julia-QuantumManyBody"
+installkernel(
+    name_of_the_installed_kernel; # default value is "Julia-QuantumManyBody"
     sysimage="name of the generated sysimage",
     path="path of the generated sysimage"
 )
